@@ -1,0 +1,10 @@
+{
+	"hosts": [{
+		"host": "localhost",
+		"port": 4068,
+		"name": "rig1",
+		"type": 1,
+		"password": null
+	}],
+	"accessToken": ""
+}

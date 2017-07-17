@@ -57,7 +57,6 @@ try:
 
     if len(data["hosts"]) > 0:
         for miner in data["hosts"]:
-            # Create two threads as follows
             try:
                 thread.start_new_thread(monitorMiner, (miner['host'], miner['port'], miner['password'], miner['type'], miner['name']))
             except:

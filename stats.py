@@ -3,7 +3,6 @@ import json
 
 class Stats(object):
     def __init__(self):
-        """Return a new Truck object."""
         self.version = ""
         self.total_hashrate = ""
         self.total_dual_hashrate = ""

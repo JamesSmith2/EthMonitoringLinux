@@ -3,16 +3,20 @@
 This version is usable in linux for monitoring rigs on EthMonitoring.com
 Read more @ https://www.ethmonitoring.com
 
-# PORTS FOR CONFIG
+# Ports for config
 
 Claymore: 3333
+
 CCMiner: 4068
+
 EWBF: 42000 (Default ports)
 
-# TYPES FOR CONFIG
+# Types for config
 
 0 - Claymore
+
 1 - CCMiner
+
 2 - EWBF
 
 # FAQ

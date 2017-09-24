@@ -72,13 +72,15 @@ class Claymores(object):
             data.dcr_hashrates = summary_response[5].split(';');  # DCR Hashrates
 
             # Temps and fan speeds
-            temp = summary_response[6].split(';');
-            for x in range(0, len(temp) - 1):
-                data.temps.append(temp[x])
-                data.fan_speeds.append(temp[x + 1])
+            temp = summary_response[6].split(';')
+	    i = 0
+	    while i < len(temp) - 1:
+                data.temps.append(temp[i])
+                data.fan_speeds.append(temp[i + 1])
+		i += 1
 
             data.online = self.connected
-        except:
-            print("Parsing error")
+        except Exception, e:
+            print("Parsing error: " + str(e))
 
         return data.toJSON()

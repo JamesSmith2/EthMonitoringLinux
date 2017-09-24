@@ -41,6 +41,8 @@ def monitorMiner(host, port, password, type, name):
         # Update miner data
         sendToAPI(host, name, data)
 
+        print("[" + time.strftime("%Y-%m-%d %H:%M:%S") + "]: " + name + " updated")
+
         time.sleep(25)
         pass
 
@@ -56,6 +58,7 @@ try:
         exit(0)
 
     if len(data["hosts"]) > 0:
+        print("[" + time.strftime("%Y-%m-%d %H:%M:%S") + "]: Starting monitoring")
         for miner in data["hosts"]:
             try:
                 thread.start_new_thread(monitorMiner, (miner['host'], miner['port'], miner['password'], miner['type'], miner['name']))

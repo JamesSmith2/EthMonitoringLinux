@@ -2,6 +2,7 @@
 
 import json
 import thread
+import socket
 import time
 import httplib, urllib
 from stats import Stats
@@ -14,13 +15,16 @@ from pprint import pprint
 accessToken = ""
 
 def sendToAPI(host, name, data):
-    params = urllib.urlencode({'host': host, 'name': name, 'type': 2, 'version': '1.0', 'data': data, 'token': accessToken})
-    headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
-    conn = httplib.HTTPConnection("ethmonitoring.com:80")
-    conn.request("POST", "/api/update", params, headers)
-    response = conn.getresponse()
-    data = response.read()
-    conn.close()
+    try:
+    	params = urllib.urlencode({'host': host, 'name': name, 'type': 2, 'version': '1.0', 'data': data, 'token': accessToken})
+    	headers = {"Content-type": "application/x-www-form-urlencoded", "Accept": "text/plain"}
+    	conn = httplib.HTTPConnection("ethmonitoring.com:80")
+    	conn.request("POST", "/api/update", params, headers)
+    	response = conn.getresponse()
+    	data = response.read()
+    	conn.close()
+    except socket.error as msg:
+            print("Socket error: {0}".format(msg))
 
 def monitorMiner(host, port, password, type, name):
     while 1:

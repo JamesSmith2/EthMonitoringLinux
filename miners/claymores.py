@@ -77,7 +77,7 @@ class Claymores(object):
 	    while i < len(temp) - 1:
                 data.temps.append(temp[i])
                 data.fan_speeds.append(temp[i + 1])
-		i += 1
+		i += 2
 
             data.online = self.connected
         except Exception, e:

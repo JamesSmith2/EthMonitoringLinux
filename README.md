@@ -5,7 +5,7 @@ Read more @ https://www.ethmonitoring.com
 
 # Ports for config
 
-Claymore: 3333
+Claymore/Ethminer: 3333
 
 CCMiner: 4068
 
@@ -18,6 +18,8 @@ EWBF: 42000 (Default ports)
 1 - CCMiner
 
 2 - EWBF
+
+3 - Ethminer
 
 # FAQ
 

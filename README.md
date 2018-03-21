@@ -23,7 +23,8 @@ EWBF: 42000 (Default ports)
 
 # FAQ
 
-- Claymore's miner v9.4 needs to be enabled in firewall, v9.3 doesn't have this problem.
+- Claymore use: --mport -3333
+- Ethminer needs: --api-port -3333
 - EWBF needs to have --api 0.0.0.0:42000 command line parameter added to enable API access.
 - CCMiner-Alexis 1.0 needs to have --api-bind=0.0.0.0:4068 parameter in the command line for API access.
 

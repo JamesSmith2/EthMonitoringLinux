@@ -9,6 +9,7 @@ from stats import Stats
 from miners.ccminer_alexis import CCMinerAlexis
 from miners.claymores import Claymores
 from miners.ewbf import EWBF
+from miners.ethminer import Ethminer
 
 from pprint import pprint
 
@@ -41,6 +42,9 @@ def monitorMiner(host, port, password, type, name):
         # EWBF type
         if type == 2:
             data = EWBF(host, port, password).getStats()
+            
+        if type == 3:
+            data = Ethminer(host,port).getStats()
 
         # Update miner data
         sendToAPI(host, name, data)

@@ -1,9 +1,9 @@
 {
 	"hosts": [{
 		"host": "localhost",
-		"port": 4068,
+		"port": 3333,
 		"name": "rig1",
-		"type": 1,
+		"type": 0,
 		"password": null
 	}],
 	"accessToken": ""

@@ -5,6 +5,7 @@ import socket
 import sys
 from stats import Stats
 from pprint import pprint
+from external import amdgpu_stats
 
 
 class Claymores(object):
@@ -71,6 +72,8 @@ class Claymores(object):
             data.hashrates = summary_response[3].split(';');  # ETH hashrates
             data.dcr_hashrates = summary_response[5].split(';');  # DCR Hashrates
 
+            data.power_usage = amdgpu_stats.read_watts(len(data.hashrates)) # Watts used by AMD / WIP
+            
             # Temps and fan speeds
             temp = summary_response[6].split(';')
 	    i = 0
@@ -78,6 +81,7 @@ class Claymores(object):
                 data.temps.append(temp[i])
                 data.fan_speeds.append(temp[i + 1])
 		i += 2
+        
 
             data.online = self.connected
         except Exception, e:
